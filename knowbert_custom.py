@@ -279,7 +279,15 @@ class EntityLinkingWithCandidateMentionsCustom(EntityLinkingWithCandidateMention
                  namespace,
                  regularizer)
 
-        self._dotprod_embedding = None
+        #self._dotprod_embedding = 
+        #self._device_for_dotprod = None
+        
+#         if self._device_for_dotprod is not None:
+#             self._dotprod_embedding = copy.deepcopy(self._entity_embedding).to(self._device_for_dotprod)
+#         else:
+        self._entity_embedding = entity_embedding    
+        self._dotprod_embedding = self._entity_embedding
+                
         if predict_embeddings:
             self._device_for_dotprod = torch.device(device_for_dotprod) if device_for_dotprod is not None else None
                         
