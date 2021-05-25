@@ -75,7 +75,7 @@
                     "random_candidates": 0,
                     "similarity": "cosine",
                     "span_tanh" : true,
-                    "no_index_candidates" : true,
+                    "no_index_candidates" : false,
                     "span_encoder_config": {
                         "hidden_size": 300,
                         "intermediate_size": 1024,
@@ -102,10 +102,10 @@
         "gradient_accumulation_batch_size": 32,
         "learning_rate_scheduler": {
             "type": "slanted_triangular",
-            "num_epochs": 5,
+            "num_epochs": 10,
             "num_steps_per_epoch": 434
         },
-        "num_epochs": 5,
+        "num_epochs": 10,
         "num_serialized_models_to_keep": 2,
         "optimizer": {
             "type": "bert_adam",

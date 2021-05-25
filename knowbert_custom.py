@@ -75,8 +75,6 @@ class DotAttentionWithPriorCustom(DotAttentionWithPrior):
                 torch.nn.functional.relu(self.out_layer_1(scores_with_prior))
             ).squeeze(-1)
 
-        #print('LS shpae:', linking_score.shape)
-
         # mask out the invalid candidates
         invalid_candidate_mask = ~entity_mask
 
@@ -279,12 +277,6 @@ class EntityLinkingWithCandidateMentionsCustom(EntityLinkingWithCandidateMention
                  namespace,
                  regularizer)
 
-        #self._dotprod_embedding = 
-        #self._device_for_dotprod = None
-        
-#         if self._device_for_dotprod is not None:
-#             self._dotprod_embedding = copy.deepcopy(self._entity_embedding).to(self._device_for_dotprod)
-#         else:
         self._entity_embedding = entity_embedding    
         self._dotprod_embedding = self._entity_embedding
                 

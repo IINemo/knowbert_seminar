@@ -102,10 +102,10 @@
         "gradient_accumulation_batch_size": 32,
         "learning_rate_scheduler": {
             "type": "slanted_triangular",
-            "num_epochs": 5,
+            "num_epochs": 10,
             "num_steps_per_epoch": 434
         },
-        "num_epochs": 5,
+        "num_epochs": 10,
         "num_serialized_models_to_keep": 2,
         "optimizer": {
             "type": "bert_adam",
